@@ -5,8 +5,8 @@
 //  Created by Maxime Bentin on 18.12.23.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
@@ -25,14 +25,8 @@ struct ContentView: View {
                 .onDelete(perform: deleteItems)
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
+                ToolbarItem(placement: .navigationBarTrailing) { EditButton() }
+                ToolbarItem { Button(action: addItem) { Label("Add Item", systemImage: "plus") } }
             }
         } detail: {
             Text("Select an item")
@@ -47,15 +41,8 @@ struct ContentView: View {
     }
 
     private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
+        withAnimation { for index in offsets { modelContext.delete(items[index]) } }
     }
 }
 
-#Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
-}
+#Preview { ContentView().modelContainer(for: Item.self, inMemory: true) }
