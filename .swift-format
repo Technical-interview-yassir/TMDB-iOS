@@ -5,7 +5,6 @@
     "indentation" : {
       "spaces" : 4
     },
-    "indentConditionalCompilationBlocks" : false,
     "indentSwitchCaseLabels" : false,
     "lineBreakAroundMultilineExpressionChainComponents" : true,
     "lineBreakBeforeControlFlowKeywords" : false,
@@ -14,10 +13,10 @@
     "lineLength" : 120,
     "maximumBlankLines" : 1,
     "prioritizeKeepingFunctionOutputTogether" : false,
-    "respectsExistingLineBreaks" : false,
+    "respectsExistingLineBreaks" : true,
     "rules" : {
       "AllPublicDeclarationsHaveDocumentation" : false,
-      "AlwaysUseLowerCamelCase" : false,
+      "AlwaysUseLowerCamelCase" : true,
       "AlwaysUseLiteralForEmptyCollectionInit" : true,
       "AmbiguousTrailingClosureOverload" : true,
       "BeginDocumentationCommentWithOneLineSummary" : false,
@@ -27,8 +26,8 @@
       "FullyIndirectEnum" : true,
       "GroupNumericLiterals" : true,
       "IdentifiersMustBeASCII" : true,
-      "NeverForceUnwrap" : false,
-      "NeverUseForceTry" : false,
+      "NeverForceUnwrap" : true,
+      "NeverUseForceTry" : true,
       "NeverUseImplicitlyUnwrappedOptionals" : false,
       "NoAccessLevelOnExtensionDeclaration" : false,
       "NoAssignmentInExpressions" : true,
@@ -43,7 +42,7 @@
       "OneCasePerLine" : true,
       "OneVariableDeclarationPerLine" : true,
       "OnlyOneTrailingClosureArgument" : true,
-      "OrderedImports" : false,
+      "OrderedImports" : true,
       "ReplaceForEachWithForLoop" : true,
       "ReturnVoidInsteadOfEmptyTuple" : true,
       "UseEarlyExits" : false,
@@ -55,7 +54,7 @@
       "UseWhereClausesInForLoops" : false,
       "ValidateDocumentationComments" : true
     },
-    "spacesAroundRangeFormationOperators" : false,
+    "spacesAroundRangeFormationOperators" : true,
     "tabWidth" : 8,
     "version" : 1
   }

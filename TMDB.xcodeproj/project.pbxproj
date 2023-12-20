@@ -9,12 +9,20 @@
 /* Begin PBXBuildFile section */
 		350D77ED2B30EA3B00B77C31 /* TMDBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D77EC2B30EA3B00B77C31 /* TMDBApp.swift */; };
 		350D77EF2B30EA3B00B77C31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D77EE2B30EA3B00B77C31 /* ContentView.swift */; };
-		350D77F12B30EA3B00B77C31 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D77F02B30EA3B00B77C31 /* Item.swift */; };
 		350D77F32B30EA3D00B77C31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 350D77F22B30EA3D00B77C31 /* Assets.xcassets */; };
 		350D77F62B30EA3D00B77C31 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 350D77F52B30EA3D00B77C31 /* Preview Assets.xcassets */; };
-		350D78002B30EA3D00B77C31 /* TMDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D77FF2B30EA3D00B77C31 /* TMDBTests.swift */; };
 		350D780A2B30EA3D00B77C31 /* TMDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D78092B30EA3D00B77C31 /* TMDBUITests.swift */; };
 		350D780C2B30EA3D00B77C31 /* TMDBUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D780B2B30EA3D00B77C31 /* TMDBUITestsLaunchTests.swift */; };
+		35385E662B333EBC006B54BA /* MovieProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35385E652B333EBC006B54BA /* MovieProvider.swift */; };
+		35385E6A2B3364EC006B54BA /* DateFormatter+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35385E692B3364EC006B54BA /* DateFormatter+extensions.swift */; };
+		35385E6C2B336513006B54BA /* DiscoverResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35385E6B2B336513006B54BA /* DiscoverResult.swift */; };
+		35385E6E2B336748006B54BA /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35385E6D2B336748006B54BA /* Secrets.plist */; };
+		35385E702B3367CA006B54BA /* SecretManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35385E6F2B3367CA006B54BA /* SecretManager.swift */; };
+		35C7D6E92B33816B009AD073 /* SecretManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7D6E82B33816B009AD073 /* SecretManagerTests.swift */; };
+		35C7D6EB2B33863E009AD073 /* SecretTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35C7D6EA2B33863E009AD073 /* SecretTests.plist */; };
+		35C7D6ED2B339223009AD073 /* SecretTestsEmpty.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35C7D6EC2B339223009AD073 /* SecretTestsEmpty.plist */; };
+		35C7D6EF2B33984B009AD073 /* MovieProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7D6EE2B33984B009AD073 /* MovieProviderTests.swift */; };
+		35C7D6F12B339E3A009AD073 /* DiscoverMovieResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 35C7D6F02B339E3A009AD073 /* DiscoverMovieResponse.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,15 +46,23 @@
 		350D77E92B30EA3B00B77C31 /* TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		350D77EC2B30EA3B00B77C31 /* TMDBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBApp.swift; sourceTree = "<group>"; };
 		350D77EE2B30EA3B00B77C31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		350D77F02B30EA3B00B77C31 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		350D77F22B30EA3D00B77C31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		350D77F52B30EA3D00B77C31 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		350D77FB2B30EA3D00B77C31 /* TMDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		350D77FF2B30EA3D00B77C31 /* TMDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBTests.swift; sourceTree = "<group>"; };
 		350D78052B30EA3D00B77C31 /* TMDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMDBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		350D78092B30EA3D00B77C31 /* TMDBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBUITests.swift; sourceTree = "<group>"; };
 		350D780B2B30EA3D00B77C31 /* TMDBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		35385E652B333EBC006B54BA /* MovieProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieProvider.swift; sourceTree = "<group>"; };
+		35385E692B3364EC006B54BA /* DateFormatter+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+extensions.swift"; sourceTree = "<group>"; };
+		35385E6B2B336513006B54BA /* DiscoverResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverResult.swift; sourceTree = "<group>"; };
+		35385E6D2B336748006B54BA /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		35385E6F2B3367CA006B54BA /* SecretManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretManager.swift; sourceTree = "<group>"; };
 		359953A82B31091F00EE5AD9 /* TMDB.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TMDB.xctestplan; sourceTree = "<group>"; };
+		35C7D6E82B33816B009AD073 /* SecretManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretManagerTests.swift; sourceTree = "<group>"; };
+		35C7D6EA2B33863E009AD073 /* SecretTests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SecretTests.plist; sourceTree = "<group>"; };
+		35C7D6EC2B339223009AD073 /* SecretTestsEmpty.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SecretTestsEmpty.plist; sourceTree = "<group>"; };
+		35C7D6EE2B33984B009AD073 /* MovieProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieProviderTests.swift; sourceTree = "<group>"; };
+		35C7D6F02B339E3A009AD073 /* DiscoverMovieResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DiscoverMovieResponse.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +114,9 @@
 		350D77EB2B30EA3B00B77C31 /* TMDB */ = {
 			isa = PBXGroup;
 			children = (
+				35385E642B333D4C006B54BA /* Networking */,
 				350D77EC2B30EA3B00B77C31 /* TMDBApp.swift */,
 				350D77EE2B30EA3B00B77C31 /* ContentView.swift */,
-				350D77F02B30EA3B00B77C31 /* Item.swift */,
 				350D77F22B30EA3D00B77C31 /* Assets.xcassets */,
 				350D77F42B30EA3D00B77C31 /* Preview Content */,
 			);
@@ -118,7 +134,11 @@
 		350D77FE2B30EA3D00B77C31 /* TMDBTests */ = {
 			isa = PBXGroup;
 			children = (
-				350D77FF2B30EA3D00B77C31 /* TMDBTests.swift */,
+				35C7D6E82B33816B009AD073 /* SecretManagerTests.swift */,
+				35C7D6EE2B33984B009AD073 /* MovieProviderTests.swift */,
+				35C7D6EA2B33863E009AD073 /* SecretTests.plist */,
+				35C7D6EC2B339223009AD073 /* SecretTestsEmpty.plist */,
+				35C7D6F02B339E3A009AD073 /* DiscoverMovieResponse.json */,
 			);
 			path = TMDBTests;
 			sourceTree = "<group>";
@@ -130,6 +150,18 @@
 				350D780B2B30EA3D00B77C31 /* TMDBUITestsLaunchTests.swift */,
 			);
 			path = TMDBUITests;
+			sourceTree = "<group>";
+		};
+		35385E642B333D4C006B54BA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				35385E652B333EBC006B54BA /* MovieProvider.swift */,
+				35385E692B3364EC006B54BA /* DateFormatter+extensions.swift */,
+				35385E6B2B336513006B54BA /* DiscoverResult.swift */,
+				35385E6D2B336748006B54BA /* Secrets.plist */,
+				35385E6F2B3367CA006B54BA /* SecretManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		359953A92B31094700EE5AD9 /* TestPlans */ = {
@@ -245,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				350D77F62B30EA3D00B77C31 /* Preview Assets.xcassets in Resources */,
+				35385E6E2B336748006B54BA /* Secrets.plist in Resources */,
 				350D77F32B30EA3D00B77C31 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +286,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35C7D6F12B339E3A009AD073 /* DiscoverMovieResponse.json in Resources */,
+				35C7D6ED2B339223009AD073 /* SecretTestsEmpty.plist in Resources */,
+				35C7D6EB2B33863E009AD073 /* SecretTests.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,8 +307,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				350D77EF2B30EA3B00B77C31 /* ContentView.swift in Sources */,
-				350D77F12B30EA3B00B77C31 /* Item.swift in Sources */,
+				35385E662B333EBC006B54BA /* MovieProvider.swift in Sources */,
 				350D77ED2B30EA3B00B77C31 /* TMDBApp.swift in Sources */,
+				35385E6A2B3364EC006B54BA /* DateFormatter+extensions.swift in Sources */,
+				35385E6C2B336513006B54BA /* DiscoverResult.swift in Sources */,
+				35385E702B3367CA006B54BA /* SecretManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +319,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				350D78002B30EA3D00B77C31 /* TMDBTests.swift in Sources */,
+				35C7D6E92B33816B009AD073 /* SecretManagerTests.swift in Sources */,
+				35C7D6EF2B33984B009AD073 /* MovieProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

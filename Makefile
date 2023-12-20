@@ -2,6 +2,7 @@ DEVICE='platform=iOS Simulator,name=iPhone 14,OS=17.2'
 
 setup: 
 	brew install swift-format
+	touch TMDB/Networking/Secrets.plist
 
 format:
 	set -o pipefail && swift-format format -i --recursive ./
