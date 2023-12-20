@@ -1,0 +1,21 @@
+name: Main
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: macos-13
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Select Xcode
+      run: sudo xcode-select -s /Applications/Xcode_15.0.1.app
+    - name: Install tools
+      run: make setup
+    - name: Lint
+      run: make lint
+    - name: Build
+      run: make build
+    - name: Test
+      run: make test
+    

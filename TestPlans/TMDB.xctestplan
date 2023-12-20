@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "347CCD59-0537-4A05-9807-6DF1102FF64B",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:TMDB.xcodeproj",
+      "identifier" : "350D77E82B30EA3A00B77C31",
+      "name" : "TMDB"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:TMDB.xcodeproj",
+        "identifier" : "350D77FA2B30EA3D00B77C31",
+        "name" : "TMDBTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:TMDB.xcodeproj",
+        "identifier" : "350D78042B30EA3D00B77C31",
+        "name" : "TMDBUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
