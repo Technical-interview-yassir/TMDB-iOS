@@ -10,6 +10,7 @@ import SwiftUI
 
 class MovieStore: ObservableObject {
     @MainActor @Published var movies: [Movie] = []
+    @MainActor @Published var loading: Bool = false
     private let movieProvider: MovieProvider
 
     init(movieProvider: MovieProvider) {
@@ -18,6 +19,7 @@ class MovieStore: ObservableObject {
 
     @MainActor
     func load() async {
+        loading = true
         do {
             let newMovies =
                 try await self.movieProvider
@@ -28,6 +30,7 @@ class MovieStore: ObservableObject {
         } catch {
             print("Failed: \(error)")
         }
+        loading = false
     }
 
     private func downloadPosters(movies: [Movie]) async throws -> [Movie] {

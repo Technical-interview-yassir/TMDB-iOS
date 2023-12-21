@@ -13,17 +13,28 @@ struct ContentView: View {
 
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(movieStore.movies) { movie in
-                    MovieCard(movie: movie)
+            ZStack(alignment: .center) {
+                List {
+                    ForEach(movieStore.movies) { movie in
+                        MovieCard(movie: movie)
+                    }
+                }
+                .refreshable {
+                    Task {
+                        await movieStore.load()
+                    }
+                }
+                
+                if movieStore.loading {
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                        .scaleEffect(5)
                 }
             }
             .navigationBarTitle("Trending", displayMode: .large)
         }
-        .onAppear {
-            Task {
-                await movieStore.load()
-            }
+        .task {
+            await movieStore.load()
         }
     }
 
