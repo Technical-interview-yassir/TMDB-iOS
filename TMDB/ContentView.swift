@@ -9,23 +9,43 @@ import SwiftData
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var movieStore: MovieStore
+    @ObservedObject private var movieStore: MovieStore
+
     var body: some View {
-        Text("TMDB")
-        List {
-            ForEach(movieStore.movies) { movie in
-                Text(movie.title)
+        NavigationStack {
+            List {
+                ForEach(movieStore.movies) { movie in
+                    MovieCard(movie: movie)
+                }
             }
+            .navigationBarTitle("Trending", displayMode: .large)
         }
         .onAppear {
-            movieStore.load()
+            Task {
+                await movieStore.load()
+            }
         }
     }
-    
-    init() {
-        let provider = HTTPMovieProvider(secretManager: SecretManager())
-        movieStore = MovieStore(movieProvider: provider)
+
+    init(movieStore: MovieStore) {
+        self.movieStore = movieStore
     }
 }
 
-#Preview { ContentView() }
+#Preview { ContentView(movieStore: PreviewMovieStore()) }
+
+class PreviewMovieStore: MovieStore {
+    // override var movies: [Movie] = []
+    override func load() async {}
+    init() {
+        super.init(movieProvider: PreviewMovieProvider())
+    }
+}
+
+struct PreviewMovieProvider: MovieProvider {
+    func trendingMovies() async throws -> [DiscoverMovie] { [] }
+
+    func poster(path: String) async throws -> Data { Data() }
+
+    func setup() async throws {}
+}

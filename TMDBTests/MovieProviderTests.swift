@@ -24,10 +24,34 @@ final class HTTPMovieProviderTests: XCTestCase {
         movieProvider = HTTPMovieProvider(secretManager: SecretManagerMock())
     }
 
+    // MARK: URL preparations
+
     func test_prepareTrendingMoviesURL_success() {
         let sut = movieProvider.prepareTrendingMoviesURL()
         XCTAssertEqual(sut?.absoluteString, "https://api.themoviedb.org/3/discover/movie")
     }
+
+    func test_prepareFetchConfigurationURL_success() throws {
+        let sut = try movieProvider.prepareFetchConfigurationURL()
+        XCTAssertEqual(sut.absoluteString, "https://api.themoviedb.org/3/configuration")
+    }
+
+    func test_preparePosterURL_success() async throws {
+        movieProvider.configuration = .init(images: .init(baseURL: "baseURL", posterSizes: ["Size1", "Size2"]))
+        let sut = try await movieProvider.preparePosterURL(path: "fakePath")
+        XCTAssertEqual(sut.absoluteString, "baseURL/Size1/fakePath")
+    }
+
+    func test_preparePosterURL_noConfiguration_throws() async throws {
+        movieProvider.configuration = nil
+        do {
+            _ = try await movieProvider.preparePosterURL(path: "fakePath")
+        } catch {
+            XCTAssertEqual(error as? MovieProvdiderError, .configurationFetchFailed)
+        }
+    }
+
+    // MARK: Request preparations
 
     func test_prepareRequest_success() throws {
         let url: URL! = URL(string: "http://valid.url")
@@ -43,18 +67,32 @@ final class HTTPMovieProviderTests: XCTestCase {
         XCTAssertEqual(sut.httpMethod, "GET")
     }
 
-    func test_trendingMovies_decoder() throws {
-        let sut = movieProvider.decoder
+    // MARK: Decoding
 
+    func dataFromJSON(resource: String) throws -> Data {
         let testBundle = Bundle(for: type(of: self))
-        let url: URL! = testBundle.url(forResource: "DiscoverMovieResponse", withExtension: "json")
-        let data = try Data(contentsOf: url)
+        let url: URL! = testBundle.url(forResource: resource, withExtension: "json")
+        return try Data(contentsOf: url)
+    }
 
-        let result = try sut.decode(DiscoverResult.self, from: data)
+    func test_trendingMovies_decoder() throws {
+        let decoder = movieProvider.decoder
 
-        XCTAssertEqual(result.page, 1)
-        XCTAssertEqual(result.totalPages, 41572)
-        XCTAssertEqual(result.totalResults, 831437)
-        XCTAssertEqual(result.results.first?.id, 787699)
+        let data = try dataFromJSON(resource: "DiscoverMovieResponse")
+        let sut = try decoder.decode(DiscoverResult.self, from: data)
+
+        XCTAssertEqual(sut.page, 1)
+        XCTAssertEqual(sut.totalPages, 41572)
+        XCTAssertEqual(sut.totalResults, 831437)
+        XCTAssertEqual(sut.results.first?.id, 787699)
+    }
+
+    func test_configuration_decoder() throws {
+        let decoder = movieProvider.decoder
+        let data = try dataFromJSON(resource: "ConfigurationResponse")
+        let sut = try decoder.decode(Configuration.self, from: data)
+
+        XCTAssertEqual(sut.images.baseURL, "https://image.tmdb.org/t/p/")
+        XCTAssertEqual(sut.images.posterSizes.count, 7)
     }
 }

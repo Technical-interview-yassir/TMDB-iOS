@@ -8,39 +8,47 @@
 import Foundation
 import SwiftUI
 
-struct Movie: Identifiable {
-    let id: Int
-    let title: String
-    let releaseDate: Date
-    let poster: URL
-    
-    init(discoverMovie: DiscoverMovie) {
-        id = discoverMovie.id
-        title = discoverMovie.title
-        releaseDate = discoverMovie.relaseDate
-        poster = discoverMovie.poster
-    }
-}
-
 class MovieStore: ObservableObject {
     @MainActor @Published var movies: [Movie] = []
-    
-    let movieProvider: MovieProvider
-    
+    private let movieProvider: MovieProvider
+
     init(movieProvider: MovieProvider) {
         self.movieProvider = movieProvider
     }
-    
+
     @MainActor
-    func load() {
-        Task {
-            do {
-                movies = try await movieProvider
-                    .trendingMovies()
-                    .map { Movie(discoverMovie: $0) }
-            } catch {
-                print("Failed: \(error)")
+    func load() async {
+        do {
+            let newMovies =
+                try await self.movieProvider
+                .trendingMovies()
+                .map { Movie(discoverMovie: $0) }
+
+            movies = try await self.downloadPosters(movies: newMovies)
+        } catch {
+            print("Failed: \(error)")
+        }
+    }
+
+    private func downloadPosters(movies: [Movie]) async throws -> [Movie] {
+        await withTaskGroup(
+            of: (Int, Data?).self,
+            returning: [Movie].self
+        ) { [weak self] group in
+            guard let self else { return [] }
+            var moviesWithImages = Dictionary(uniqueKeysWithValues: movies.map { ($0.id, $0) })
+            for movie in movies {
+                group.addTask { await (movie.id, try? self.movieProvider.poster(path: movie.poster)) }
             }
+
+            for await result in group {
+                guard let data = result.1,
+                    let uiImage = UIImage(data: data)
+                else { continue }
+                moviesWithImages[result.0]?.image = Image(uiImage: uiImage)
+            }
+
+            return Array(moviesWithImages.values)
         }
     }
 }

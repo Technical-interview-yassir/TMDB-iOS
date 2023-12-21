@@ -11,7 +11,7 @@ struct DiscoverMovie: Codable {
     let id: Int
     let title: String
     let relaseDate: Date
-    let poster: URL
+    let poster: String
     enum CodingKeys: String, CodingKey {
         case id
         case title = "original_title"
