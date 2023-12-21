@@ -9,17 +9,22 @@ import SwiftData
 import SwiftUI
 
 struct ContentView: View {
-    let provider = HTTPMovieProvider(secretManager: SecretManager())
+    @ObservedObject var movieStore: MovieStore
     var body: some View {
         Text("TMDB")
-            .onAppear {
-                Task {
-                    do {
-                        let res = try await provider.trendingMovies()
-                        print(res)
-                    } catch { print(error) }
-                }
+        List {
+            ForEach(movieStore.movies) { movie in
+                Text(movie.title)
             }
+        }
+        .onAppear {
+            movieStore.load()
+        }
+    }
+    
+    init() {
+        let provider = HTTPMovieProvider(secretManager: SecretManager())
+        movieStore = MovieStore(movieProvider: provider)
     }
 }
 

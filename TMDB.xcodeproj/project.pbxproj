@@ -23,6 +23,7 @@
 		35C7D6ED2B339223009AD073 /* SecretTestsEmpty.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35C7D6EC2B339223009AD073 /* SecretTestsEmpty.plist */; };
 		35C7D6EF2B33984B009AD073 /* MovieProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7D6EE2B33984B009AD073 /* MovieProviderTests.swift */; };
 		35C7D6F12B339E3A009AD073 /* DiscoverMovieResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 35C7D6F02B339E3A009AD073 /* DiscoverMovieResponse.json */; };
+		35C7D6F42B34450E009AD073 /* MovieStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7D6F32B34450E009AD073 /* MovieStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		35C7D6EC2B339223009AD073 /* SecretTestsEmpty.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SecretTestsEmpty.plist; sourceTree = "<group>"; };
 		35C7D6EE2B33984B009AD073 /* MovieProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieProviderTests.swift; sourceTree = "<group>"; };
 		35C7D6F02B339E3A009AD073 /* DiscoverMovieResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DiscoverMovieResponse.json; sourceTree = "<group>"; };
+		35C7D6F32B34450E009AD073 /* MovieStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		350D77EB2B30EA3B00B77C31 /* TMDB */ = {
 			isa = PBXGroup;
 			children = (
+				35C7D6F22B3444FB009AD073 /* Stores */,
 				35385E642B333D4C006B54BA /* Networking */,
 				350D77EC2B30EA3B00B77C31 /* TMDBApp.swift */,
 				350D77EE2B30EA3B00B77C31 /* ContentView.swift */,
@@ -170,6 +173,14 @@
 				359953A82B31091F00EE5AD9 /* TMDB.xctestplan */,
 			);
 			path = TestPlans;
+			sourceTree = "<group>";
+		};
+		35C7D6F22B3444FB009AD073 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				35C7D6F32B34450E009AD073 /* MovieStore.swift */,
+			);
+			path = Stores;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +323,7 @@
 				35385E6A2B3364EC006B54BA /* DateFormatter+extensions.swift in Sources */,
 				35385E6C2B336513006B54BA /* DiscoverResult.swift in Sources */,
 				35385E702B3367CA006B54BA /* SecretManager.swift in Sources */,
+				35C7D6F42B34450E009AD073 /* MovieStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
