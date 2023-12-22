@@ -10,12 +10,12 @@ import Foundation
 struct DiscoverMovie: Codable {
     let id: Int
     let title: String
-    let relaseDate: Date
+    let releaseDate: Date
     let poster: String
     enum CodingKeys: String, CodingKey {
         case id
         case title = "original_title"
-        case relaseDate = "release_date"
+        case releaseDate = "release_date"
         case poster = "poster_path"
     }
 }

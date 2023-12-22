@@ -20,8 +20,9 @@ class MovieStore: ObservableObject {
     }
     @MainActor @Published var loading: Bool = false
     @MainActor @Published var searchedText: String = ""
-    
+
     private let movieProvider: MovieProvider
+    private var pageLoaded: Int = 1
 
     init(movieProvider: MovieProvider) {
         self.movieProvider = movieProvider
@@ -33,17 +34,27 @@ class MovieStore: ObservableObject {
         do {
             let newMovies =
                 try await self.movieProvider
-                .trendingMovies(page: 1)
+                .trendingMovies(page: pageLoaded)
                 .map { Movie(discoverMovie: $0) }
 
-            movies = try await self.downloadPosters(movies: newMovies)
+            let moviesWithPoster = try await self.downloadPosters(movies: newMovies)
+            movies = movies.merging(
+                moviesWithPoster,
+                uniquingKeysWith: { movie1, _ in
+                    movie1
+                }
+            )
         } catch {
             print("Failed: \(error)")
         }
         loading = false
     }
 
-    // TODO: Load details
+    func loadMoreMovies() async {
+        pageLoaded += 1
+        await load()
+    }
+
     @MainActor
     func addDetailsTo(id: Int) async {
         guard movies[id]?.profit == nil else { return }

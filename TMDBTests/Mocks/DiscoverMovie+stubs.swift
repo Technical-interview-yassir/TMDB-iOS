@@ -10,12 +10,19 @@ import Foundation
 @testable import TMDB
 
 extension DiscoverMovie {
-    static var stub: Self {
+    static var stub: Self = stub()
+
+    static func stub(
+        id: Int = 12,
+        title: String = "Mocked",
+        releaseDate: Date = Date(timeIntervalSince1970: 1_234_567),
+        poster: String = "poster"
+    ) -> Self {
         Self(
-            id: 12,
-            title: "Mocked",
-            relaseDate: Date(timeIntervalSince1970: 1_234_567),
-            poster: "poster"
+            id: id,
+            title: title,
+            releaseDate: releaseDate,
+            poster: poster
         )
     }
 }

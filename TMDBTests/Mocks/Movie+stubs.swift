@@ -11,7 +11,7 @@ import Foundation
 
 extension Movie {
     static var stub: Self = stub()
-    
+
     static func stub(
         id: Int = 45,
         title: String = "Mocked",

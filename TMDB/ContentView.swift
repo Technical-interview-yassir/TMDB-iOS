@@ -26,6 +26,11 @@ struct ContentView: View {
                 List {
                     ForEach(movieStore.filteredMovies.keys, id: \.self) { id in
                         decorateMovieCard(id: id)
+                            .task {
+                                if movieStore.filteredMovies.keys.last == id {
+                                    await movieStore.loadMoreMovies()
+                                }
+                            }
                     }
                 }
                 .searchable(text: $movieStore.searchedText)

@@ -26,7 +26,7 @@ struct Movie: Identifiable, Equatable {
     init(discoverMovie: DiscoverMovie) {
         id = discoverMovie.id
         title = discoverMovie.title
-        releaseDate = discoverMovie.relaseDate
+        releaseDate = discoverMovie.releaseDate
         poster = discoverMovie.poster
     }
 
