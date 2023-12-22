@@ -67,13 +67,14 @@ class MovieStore: ObservableObject {
                 imageQuality: .high
             )
             async let details = try movieProvider.movieDetails(id: id)
-            
-            let image: Image? = if let uiImage = UIImage(data: try await imageData) {
-                Image(uiImage: uiImage)
-            } else {
-                nil
-            }
-            
+
+            let image: Image? =
+                if let uiImage = UIImage(data: try await imageData) {
+                    Image(uiImage: uiImage)
+                } else {
+                    nil
+                }
+
             movies[id]?.addDetails(details: try await details, image: image)
         } catch {
             print("Failed: \(error)")

@@ -15,10 +15,11 @@ struct Movie: Identifiable, Equatable {
     var image: Image? = nil
     var profit: Int? = nil
 
-    init(id: Int,
-         title: String,
-         releaseDate: Date,
-         poster: String
+    init(
+        id: Int,
+        title: String,
+        releaseDate: Date,
+        poster: String
     ) {
         self.id = id
         self.title = title

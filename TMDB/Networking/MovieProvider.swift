@@ -14,7 +14,7 @@ protocol MovieProvider {
     func movieDetails(id: Int) async throws -> MovieDetails
 }
 
-enum MovieProvdiderError: Error {
+enum MovieProviderError: Error {
     case plistNotFound
     case invalidBaseURL
     case configurationFetchFailed
@@ -28,7 +28,7 @@ class HTTPMovieProvider: MovieProvider {
 
     func getAccessToken() throws -> String {
         guard let secrets = Bundle.main.url(forResource: "Secrets", withExtension: "plist") else {
-            throw MovieProvdiderError.plistNotFound
+            throw MovieProviderError.plistNotFound
         }
         return secretManager.readTMDBAccessToken(file: secrets)
     }
@@ -76,7 +76,7 @@ class HTTPMovieProvider: MovieProvider {
     }
 
     func prepareFetchConfigurationURL() throws -> URL {
-        guard var baseURL else { throw MovieProvdiderError.invalidBaseURL }
+        guard var baseURL else { throw MovieProviderError.invalidBaseURL }
         baseURL.append(path: "configuration")
         return baseURL
     }
@@ -91,8 +91,8 @@ class HTTPMovieProvider: MovieProvider {
     }
 
     func preparePosterURL(path: String, imageQuality: ImageQuality) async throws -> URL {
-        guard let configuration else { throw MovieProvdiderError.configurationFetchFailed }
-        guard let baseURL = URL(string: configuration.images.baseURL) else { throw MovieProvdiderError.invalidBaseURL }
+        guard let configuration else { throw MovieProviderError.configurationFetchFailed }
+        guard let baseURL = URL(string: configuration.images.baseURL) else { throw MovieProviderError.invalidBaseURL }
 
         let posterSize =
             switch imageQuality {
@@ -106,7 +106,7 @@ class HTTPMovieProvider: MovieProvider {
             baseURL
             .appending(path: posterSize ?? "")
             .appending(path: path)
-        
+
         return url
     }
 
@@ -119,7 +119,7 @@ class HTTPMovieProvider: MovieProvider {
     }
 
     func prepareMovieDetailsURL(id: Int) throws -> URL {
-        guard var baseURL else { throw MovieProvdiderError.invalidBaseURL }
+        guard var baseURL else { throw MovieProviderError.invalidBaseURL }
         baseURL.append(path: "movie/\(id)")
         return baseURL
     }
