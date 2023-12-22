@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 protocol MovieProvider {
-    func trendingMovies() async throws -> [DiscoverMovie]
+    func trendingMovies(page: Int) async throws -> [DiscoverMovie]
     func poster(path: String) async throws -> Data
     func movieDetails(id: Int) async throws -> MovieDetails
 }
@@ -45,9 +45,12 @@ class HTTPMovieProvider: MovieProvider {
         }
     }
 
-    func prepareTrendingMoviesURL() -> URL? {
+    func prepareDiscovergMoviesURL(page: Int) -> URL? {
         guard var baseURL else { return nil }
         baseURL.append(path: "discover/movie")
+        baseURL = baseURL.appending(queryItems: [
+            .init(name: "page", value: "\(page)")
+        ])
 
         return baseURL
     }
@@ -63,8 +66,8 @@ class HTTPMovieProvider: MovieProvider {
         return request
     }
 
-    func trendingMovies() async throws -> [DiscoverMovie] {
-        guard let url = prepareTrendingMoviesURL() else { return [] }
+    func trendingMovies(page: Int) async throws -> [DiscoverMovie] {
+        guard let url = prepareDiscovergMoviesURL(page: page) else { return [] }
         let request = try prepareRequest(url: url)
         let (data, _) = try await URLSession.shared.data(for: request)
         let result = try decoder.decode(DiscoverResult.self, from: data)

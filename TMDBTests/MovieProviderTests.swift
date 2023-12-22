@@ -27,8 +27,8 @@ final class HTTPMovieProviderTests: XCTestCase {
     // MARK: URL preparations
 
     func test_prepareTrendingMoviesURL_success() {
-        let sut = movieProvider.prepareTrendingMoviesURL()
-        XCTAssertEqual(sut?.absoluteString, "https://api.themoviedb.org/3/discover/movie")
+        let sut = movieProvider.prepareDiscovergMoviesURL(page: 1)
+        XCTAssertEqual(sut?.absoluteString, "https://api.themoviedb.org/3/discover/movie?page=1")
     }
 
     func test_prepareFetchConfigurationURL_success() throws {

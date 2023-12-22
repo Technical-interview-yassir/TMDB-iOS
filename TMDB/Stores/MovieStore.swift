@@ -33,7 +33,7 @@ class MovieStore: ObservableObject {
         do {
             let newMovies =
                 try await self.movieProvider
-                .trendingMovies()
+                .trendingMovies(page: 1)
                 .map { Movie(discoverMovie: $0) }
 
             movies = try await self.downloadPosters(movies: newMovies)

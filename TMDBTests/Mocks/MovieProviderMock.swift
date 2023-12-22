@@ -14,7 +14,7 @@ class MovieProviderMock: MovieProvider {
         MovieDetails(id: 45, revenue: 100_000, budget: 5_000)
     }
 
-    func trendingMovies() async throws -> [DiscoverMovie] {
+    func trendingMovies(page: Int) async throws -> [DiscoverMovie] {
         [.stub]
     }
 

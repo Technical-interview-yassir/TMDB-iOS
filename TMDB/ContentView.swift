@@ -68,7 +68,7 @@ struct PreviewMovieProvider: MovieProvider {
         MovieDetails(id: 45, revenue: 50, budget: 30)
     }
 
-    func trendingMovies() async throws -> [DiscoverMovie] { [] }
+    func trendingMovies(page: Int) async throws -> [DiscoverMovie] { [] }
     func poster(path: String) async throws -> Data { Data() }
     func setup() async throws {}
 }
