@@ -35,6 +35,7 @@
 		35C7D70F2B34FD71009AD073 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7D70E2B34FD71009AD073 /* MovieDetails.swift */; };
 		35C7D7122B35026C009AD073 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 35C7D7112B35026C009AD073 /* OrderedCollections */; };
 		35C7D7142B359737009AD073 /* Movie+stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7D7132B359737009AD073 /* Movie+stubs.swift */; };
+		35C7D7162B362527009AD073 /* ImageQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7D7152B362527009AD073 /* ImageQuality.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		35C7D70C2B34EEA1009AD073 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
 		35C7D70E2B34FD71009AD073 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 		35C7D7132B359737009AD073 /* Movie+stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+stubs.swift"; sourceTree = "<group>"; };
+		35C7D7152B362527009AD073 /* ImageQuality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageQuality.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				35385E692B3364EC006B54BA /* DateFormatter+extensions.swift */,
 				35385E6D2B336748006B54BA /* Secrets.plist */,
 				35385E6F2B3367CA006B54BA /* SecretManager.swift */,
+				35C7D7152B362527009AD073 /* ImageQuality.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				35385E662B333EBC006B54BA /* MovieProvider.swift in Sources */,
 				350D77ED2B30EA3B00B77C31 /* TMDBApp.swift in Sources */,
 				35C7D6FD2B349984009AD073 /* Configuration.swift in Sources */,
+				35C7D7162B362527009AD073 /* ImageQuality.swift in Sources */,
 				35C7D7022B34D49B009AD073 /* Movie.swift in Sources */,
 				35C7D70D2B34EEA1009AD073 /* MovieDetailsView.swift in Sources */,
 				35385E6A2B3364EC006B54BA /* DateFormatter+extensions.swift in Sources */,

@@ -74,6 +74,6 @@ struct PreviewMovieProvider: MovieProvider {
     }
 
     func trendingMovies(page: Int) async throws -> [DiscoverMovie] { [] }
-    func poster(path: String) async throws -> Data { Data() }
+    func poster(path: String, imageQuality: ImageQuality) async throws -> Data { Data() }
     func setup() async throws {}
 }

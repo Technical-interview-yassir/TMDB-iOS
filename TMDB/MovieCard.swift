@@ -12,8 +12,10 @@ struct MovieCard: View {
     let movie: Movie
     var body: some View {
         HStack {
-            // AsyncImage(url: movie.poster)
-            movie.image
+            movie.image?
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150)
             VStack {
                 Text(movie.title)
                 Text(movie.releaseDate.formatted())

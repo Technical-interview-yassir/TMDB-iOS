@@ -38,14 +38,20 @@ final class HTTPMovieProviderTests: XCTestCase {
 
     func test_preparePosterURL_success() async throws {
         movieProvider.configuration = .init(images: .init(baseURL: "baseURL", posterSizes: ["Size1", "Size2"]))
-        let sut = try await movieProvider.preparePosterURL(path: "fakePath")
+        let sut = try await movieProvider.preparePosterURL(path: "fakePath", imageQuality: .low)
         XCTAssertEqual(sut.absoluteString, "baseURL/Size1/fakePath")
+    }
+    
+    func test_preparePosterURL_highQuality() async throws {
+        movieProvider.configuration = .init(images: .init(baseURL: "baseURL", posterSizes: ["Size1", "Size2"]))
+        let sut = try await movieProvider.preparePosterURL(path: "fakePath", imageQuality: .high)
+        XCTAssertEqual(sut.absoluteString, "baseURL/Size2/fakePath")
     }
 
     func test_preparePosterURL_noConfiguration_throws() async throws {
         movieProvider.configuration = nil
         do {
-            _ = try await movieProvider.preparePosterURL(path: "fakePath")
+            _ = try await movieProvider.preparePosterURL(path: "fakePath", imageQuality: .low)
         } catch {
             XCTAssertEqual(error as? MovieProvdiderError, .configurationFetchFailed)
         }

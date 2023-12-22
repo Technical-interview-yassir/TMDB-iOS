@@ -73,6 +73,7 @@ final class MovieStoreTests: XCTestCase {
         await store.addDetailsTo(id: 45)
 
         XCTAssertEqual(store.movies[45]?.profit, 95_000)
+        XCTAssertNotNil(store.movies[45]?.image)
     }
 
     @MainActor

@@ -20,7 +20,7 @@ class MovieProviderMock: MovieProvider {
         trendingMovies
     }
 
-    func poster(path: String) async throws -> Data {
+    func poster(path: String, imageQuality: ImageQuality) async throws -> Data {
         guard let data = UIImage(systemName: "pencil")?.pngData() else {
             return Data()
         }

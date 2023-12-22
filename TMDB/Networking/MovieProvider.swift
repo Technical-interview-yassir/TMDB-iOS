@@ -10,7 +10,7 @@ import SwiftUI
 
 protocol MovieProvider {
     func trendingMovies(page: Int) async throws -> [DiscoverMovie]
-    func poster(path: String) async throws -> Data
+    func poster(path: String, imageQuality: ImageQuality) async throws -> Data
     func movieDetails(id: Int) async throws -> MovieDetails
 }
 
@@ -90,18 +90,28 @@ class HTTPMovieProvider: MovieProvider {
         return result
     }
 
-    func preparePosterURL(path: String) async throws -> URL {
+    func preparePosterURL(path: String, imageQuality: ImageQuality) async throws -> URL {
         guard let configuration else { throw MovieProvdiderError.configurationFetchFailed }
         guard let baseURL = URL(string: configuration.images.baseURL) else { throw MovieProvdiderError.invalidBaseURL }
+
+        let posterSize =
+            switch imageQuality {
+            case .low:
+                configuration.images.posterSizes.first
+            case .high:
+                configuration.images.posterSizes.last
+            }
+
         let url =
             baseURL
-            .appending(path: configuration.images.posterSizes.first ?? "")
+            .appending(path: posterSize ?? "")
             .appending(path: path)
+        
         return url
     }
 
-    func poster(path: String) async throws -> Data {
-        let url = try await preparePosterURL(path: path)
+    func poster(path: String, imageQuality: ImageQuality) async throws -> Data {
+        let url = try await preparePosterURL(path: path, imageQuality: imageQuality)
         let request = try prepareRequest(url: url)
         let (data, _) = try await URLSession.shared.data(for: request)
 

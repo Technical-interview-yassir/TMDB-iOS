@@ -57,12 +57,24 @@ class MovieStore: ObservableObject {
 
     @MainActor
     func addDetailsTo(id: Int) async {
-        guard movies[id]?.profit == nil else { return }
+        guard let movie = movies[id] else { return }
+        guard movie.profit == nil else { return }
 
         loading = true
         do {
-            let details = try await movieProvider.movieDetails(id: id)
-            movies[id]?.addDetails(details: details)
+            async let imageData = self.movieProvider.poster(
+                path: movie.poster,
+                imageQuality: .high
+            )
+            async let details = try movieProvider.movieDetails(id: id)
+            
+            let image: Image? = if let uiImage = UIImage(data: try await imageData) {
+                Image(uiImage: uiImage)
+            } else {
+                nil
+            }
+            
+            movies[id]?.addDetails(details: try await details, image: image)
         } catch {
             print("Failed: \(error)")
         }
@@ -77,7 +89,15 @@ class MovieStore: ObservableObject {
             guard let self else { return [:] }
             var moviesWithImages = OrderedDictionary(uniqueKeysWithValues: movies.map { ($0.id, $0) })
             for movie in movies {
-                group.addTask { await (movie.id, try? self.movieProvider.poster(path: movie.poster)) }
+                group.addTask {
+                    await (
+                        movie.id,
+                        try? self.movieProvider.poster(
+                            path: movie.poster,
+                            imageQuality: .low
+                        )
+                    )
+                }
             }
 
             for await result in group {

@@ -16,7 +16,7 @@ extension Movie {
         id: Int = 45,
         title: String = "Mocked",
         releaseDate: Date = Date(timeIntervalSince1970: 987_654_321),
-        poster: String = "postter"
+        poster: String = "poster"
     ) -> Self {
         Self(
             id: id,
