@@ -47,7 +47,7 @@ class HTTPMovieProvider: MovieProvider {
 
     func prepareTrendingMoviesURL() -> URL? {
         guard var baseURL else { return nil }
-        baseURL.append(path: "trending/movie/day")
+        baseURL.append(path: "discover/movie")
 
         return baseURL
     }
