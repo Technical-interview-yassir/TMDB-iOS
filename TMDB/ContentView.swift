@@ -24,10 +24,11 @@ struct ContentView: View {
         NavigationStack {
             ZStack(alignment: .center) {
                 List {
-                    ForEach(movieStore.movies.keys, id: \.self) { id in
+                    ForEach(movieStore.filteredMovies.keys, id: \.self) { id in
                         decorateMovieCard(id: id)
                     }
                 }
+                .searchable(text: $movieStore.searchedText)
                 .refreshable {
                     Task {
                         await movieStore.load()

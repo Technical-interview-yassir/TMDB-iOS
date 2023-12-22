@@ -11,7 +11,16 @@ import SwiftUI
 
 class MovieStore: ObservableObject {
     @MainActor @Published var movies: OrderedDictionary<Int, Movie> = [:]
+    @MainActor var filteredMovies: OrderedDictionary<Int, Movie> {
+        if searchedText.isEmpty {
+            return movies
+        } else {
+            return movies.filter { $0.value.title.contains(searchedText) }
+        }
+    }
     @MainActor @Published var loading: Bool = false
+    @MainActor @Published var searchedText: String = ""
+    
     private let movieProvider: MovieProvider
 
     init(movieProvider: MovieProvider) {

@@ -33,4 +33,30 @@ final class MovieStoreTests: XCTestCase {
 
         XCTAssertEqual(store.movies[45]?.profit, 95_000)
     }
+    
+    @MainActor
+    func test_filteredMovies_empty() async throws {
+        let store = MovieStore(movieProvider: MovieProviderMock())
+        store.movies[45] = .stub(title: "Title")
+        
+        store.searchedText = "None"
+        
+        // SUT
+        let sut = store.filteredMovies
+        
+        XCTAssertTrue(sut.isEmpty)
+    }
+    
+    @MainActor
+    func test_filteredMovies_results() async throws {
+        let store = MovieStore(movieProvider: MovieProviderMock())
+        store.movies[45] = .stub(title: "Title")
+        
+        store.searchedText = "Ti"
+        
+        // SUT
+        let sut = store.filteredMovies
+        
+        XCTAssertEqual(sut.count, 1)
+    }
 }
