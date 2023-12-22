@@ -10,6 +10,10 @@ import UIKit
 @testable import TMDB
 
 class MovieProviderMock: MovieProvider {
+    func movieDetails(id: Int) async throws -> TMDB.MovieDetails {
+        MovieDetails(id: 45, revenue: 100_000, budget: 5_000)
+    }
+
     func trendingMovies() async throws -> [DiscoverMovie] {
         [.stub]
     }

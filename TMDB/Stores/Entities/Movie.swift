@@ -13,12 +13,14 @@ struct Movie: Identifiable, Equatable {
     let releaseDate: Date
     let poster: String
     var image: Image? = nil
+    var profit: Int? = nil
 
-    init(id: Int, title: String, releaseDate: Date, poster: String) {
+    init(id: Int, title: String, releaseDate: Date, poster: String, profit: Int? = nil) {
         self.id = id
         self.title = title
         self.releaseDate = releaseDate
         self.poster = poster
+        self.profit = profit
     }
 
     init(discoverMovie: DiscoverMovie) {
@@ -26,5 +28,9 @@ struct Movie: Identifiable, Equatable {
         title = discoverMovie.title
         releaseDate = discoverMovie.relaseDate
         poster = discoverMovie.poster
+    }
+
+    mutating func addDetails(details: MovieDetails) {
+        profit = details.revenue - details.budget
     }
 }

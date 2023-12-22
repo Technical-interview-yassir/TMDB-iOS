@@ -31,6 +31,10 @@
 		35C7D7062B34D594009AD073 /* MovieStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7D7052B34D594009AD073 /* MovieStoreTests.swift */; };
 		35C7D7092B34E92F009AD073 /* MovieProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7D7082B34E92F009AD073 /* MovieProviderMock.swift */; };
 		35C7D70B2B34E99F009AD073 /* DiscoverMovie+stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7D70A2B34E99F009AD073 /* DiscoverMovie+stubs.swift */; };
+		35C7D70D2B34EEA1009AD073 /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7D70C2B34EEA1009AD073 /* MovieDetailsView.swift */; };
+		35C7D70F2B34FD71009AD073 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7D70E2B34FD71009AD073 /* MovieDetails.swift */; };
+		35C7D7122B35026C009AD073 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 35C7D7112B35026C009AD073 /* OrderedCollections */; };
+		35C7D7142B359737009AD073 /* Movie+stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7D7132B359737009AD073 /* Movie+stubs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,9 @@
 		35C7D7052B34D594009AD073 /* MovieStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieStoreTests.swift; sourceTree = "<group>"; };
 		35C7D7082B34E92F009AD073 /* MovieProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieProviderMock.swift; sourceTree = "<group>"; };
 		35C7D70A2B34E99F009AD073 /* DiscoverMovie+stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiscoverMovie+stubs.swift"; sourceTree = "<group>"; };
+		35C7D70C2B34EEA1009AD073 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
+		35C7D70E2B34FD71009AD073 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
+		35C7D7132B359737009AD073 /* Movie+stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+stubs.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35C7D7122B35026C009AD073 /* OrderedCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +145,7 @@
 				35C7D6F92B34755C009AD073 /* MovieCard.swift */,
 				350D77F22B30EA3D00B77C31 /* Assets.xcassets */,
 				350D77F42B30EA3D00B77C31 /* Preview Content */,
+				35C7D70C2B34EEA1009AD073 /* MovieDetailsView.swift */,
 			);
 			path = TMDB;
 			sourceTree = "<group>";
@@ -207,6 +216,7 @@
 			children = (
 				35385E6B2B336513006B54BA /* DiscoverResult.swift */,
 				35C7D6FC2B349984009AD073 /* Configuration.swift */,
+				35C7D70E2B34FD71009AD073 /* MovieDetails.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -224,6 +234,7 @@
 			children = (
 				35C7D7082B34E92F009AD073 /* MovieProviderMock.swift */,
 				35C7D70A2B34E99F009AD073 /* DiscoverMovie+stubs.swift */,
+				35C7D7132B359737009AD073 /* Movie+stubs.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -244,6 +255,9 @@
 			dependencies = (
 			);
 			name = TMDB;
+			packageProductDependencies = (
+				35C7D7112B35026C009AD073 /* OrderedCollections */,
+			);
 			productName = TMDB;
 			productReference = 350D77E92B30EA3B00B77C31 /* TMDB.app */;
 			productType = "com.apple.product-type.application";
@@ -316,6 +330,9 @@
 				Base,
 			);
 			mainGroup = 350D77E02B30EA3A00B77C31;
+			packageReferences = (
+				35C7D7102B35026B009AD073 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			productRefGroup = 350D77EA2B30EA3B00B77C31 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -363,11 +380,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35C7D70F2B34FD71009AD073 /* MovieDetails.swift in Sources */,
 				350D77EF2B30EA3B00B77C31 /* ContentView.swift in Sources */,
 				35385E662B333EBC006B54BA /* MovieProvider.swift in Sources */,
 				350D77ED2B30EA3B00B77C31 /* TMDBApp.swift in Sources */,
 				35C7D6FD2B349984009AD073 /* Configuration.swift in Sources */,
 				35C7D7022B34D49B009AD073 /* Movie.swift in Sources */,
+				35C7D70D2B34EEA1009AD073 /* MovieDetailsView.swift in Sources */,
 				35385E6A2B3364EC006B54BA /* DateFormatter+extensions.swift in Sources */,
 				35C7D6FA2B34755C009AD073 /* MovieCard.swift in Sources */,
 				35385E6C2B336513006B54BA /* DiscoverResult.swift in Sources */,
@@ -384,6 +403,7 @@
 				35C7D7062B34D594009AD073 /* MovieStoreTests.swift in Sources */,
 				35C7D6EF2B33984B009AD073 /* MovieProviderTests.swift in Sources */,
 				35C7D70B2B34E99F009AD073 /* DiscoverMovie+stubs.swift in Sources */,
+				35C7D7142B359737009AD073 /* Movie+stubs.swift in Sources */,
 				35C7D7092B34E92F009AD073 /* MovieProviderMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -702,6 +722,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		35C7D7102B35026B009AD073 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		35C7D7112B35026C009AD073 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 35C7D7102B35026B009AD073 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 350D77E12B30EA3A00B77C31 /* Project object */;
 }

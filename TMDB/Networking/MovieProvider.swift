@@ -11,6 +11,7 @@ import SwiftUI
 protocol MovieProvider {
     func trendingMovies() async throws -> [DiscoverMovie]
     func poster(path: String) async throws -> Data
+    func movieDetails(id: Int) async throws -> MovieDetails
 }
 
 enum MovieProvdiderError: Error {
@@ -102,5 +103,20 @@ class HTTPMovieProvider: MovieProvider {
         let (data, _) = try await URLSession.shared.data(for: request)
 
         return data
+    }
+
+    func prepareMovieDetailsURL(id: Int) throws -> URL {
+        guard var baseURL else { throw MovieProvdiderError.invalidBaseURL }
+        baseURL.append(path: "movie/\(id)")
+        return baseURL
+    }
+
+    func movieDetails(id: Int) async throws -> MovieDetails {
+        let url = try prepareMovieDetailsURL(id: id)
+        let request = try prepareRequest(url: url)
+        let (data, _) = try await URLSession.shared.data(for: request)
+        let result = try decoder.decode(MovieDetails.self, from: data)
+
+        return result
     }
 }

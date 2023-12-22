@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import OrderedCollections
 import SwiftUI
 
 class MovieStore: ObservableObject {
-    @MainActor @Published var movies: [Movie] = []
+    @MainActor @Published var movies: OrderedDictionary<Int, Movie> = [:]
     @MainActor @Published var loading: Bool = false
     private let movieProvider: MovieProvider
 
@@ -33,13 +34,28 @@ class MovieStore: ObservableObject {
         loading = false
     }
 
-    private func downloadPosters(movies: [Movie]) async throws -> [Movie] {
+    // TODO: Load details
+    @MainActor
+    func addDetailsTo(id: Int) async {
+        guard movies[id]?.profit == nil else { return }
+
+        loading = true
+        do {
+            let details = try await movieProvider.movieDetails(id: id)
+            movies[id]?.addDetails(details: details)
+        } catch {
+            print("Failed: \(error)")
+        }
+        loading = false
+    }
+
+    private func downloadPosters(movies: [Movie]) async throws -> OrderedDictionary<Int, Movie> {
         await withTaskGroup(
             of: (Int, Data?).self,
-            returning: [Movie].self
+            returning: OrderedDictionary<Int, Movie>.self
         ) { [weak self] group in
-            guard let self else { return [] }
-            var moviesWithImages = Dictionary(uniqueKeysWithValues: movies.map { ($0.id, $0) })
+            guard let self else { return [:] }
+            var moviesWithImages = OrderedDictionary(uniqueKeysWithValues: movies.map { ($0.id, $0) })
             for movie in movies {
                 group.addTask { await (movie.id, try? self.movieProvider.poster(path: movie.poster)) }
             }
@@ -51,7 +67,7 @@ class MovieStore: ObservableObject {
                 moviesWithImages[result.0]?.image = Image(uiImage: uiImage)
             }
 
-            return Array(moviesWithImages.values)
+            return moviesWithImages
         }
     }
 }

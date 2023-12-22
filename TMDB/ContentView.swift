@@ -11,12 +11,21 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject private var movieStore: MovieStore
 
+    @ViewBuilder
+    func decorateMovieCard(id: Int) -> some View {
+        if let movie = movieStore.movies[id] {
+            NavigationLink(destination: MovieDetailsView(movieStore: movieStore, movie: movie)) {
+                MovieCard(movie: movie)
+            }
+        }
+    }
+
     var body: some View {
         NavigationStack {
             ZStack(alignment: .center) {
                 List {
-                    ForEach(movieStore.movies) { movie in
-                        MovieCard(movie: movie)
+                    ForEach(movieStore.movies.keys, id: \.self) { id in
+                        decorateMovieCard(id: id)
                     }
                 }
                 .refreshable {
@@ -24,7 +33,7 @@ struct ContentView: View {
                         await movieStore.load()
                     }
                 }
-                
+
                 if movieStore.loading {
                     ProgressView()
                         .progressViewStyle(.circular)
@@ -54,9 +63,11 @@ class PreviewMovieStore: MovieStore {
 }
 
 struct PreviewMovieProvider: MovieProvider {
+    func movieDetails(id: Int) async throws -> MovieDetails {
+        MovieDetails(id: 45, revenue: 50, budget: 30)
+    }
+
     func trendingMovies() async throws -> [DiscoverMovie] { [] }
-
     func poster(path: String) async throws -> Data { Data() }
-
     func setup() async throws {}
 }
