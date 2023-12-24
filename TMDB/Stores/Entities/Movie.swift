@@ -19,12 +19,16 @@ struct Movie: Identifiable, Equatable {
         id: Int,
         title: String,
         releaseDate: Date,
-        poster: String
+        poster: String,
+        image: Image? = nil,
+        profit: Int? = nil
     ) {
         self.id = id
         self.title = title
         self.releaseDate = releaseDate
         self.poster = poster
+        self.image = image
+        self.profit = profit
     }
 
     init(discoverMovie: DiscoverMovie) {

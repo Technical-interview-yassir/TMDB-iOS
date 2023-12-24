@@ -25,12 +25,10 @@
       }
     },
     {
-      "enabled" : false,
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:TMDB.xcodeproj",
-        "identifier" : "350D78042B30EA3D00B77C31",
-        "name" : "TMDBUITests"
+        "identifier" : "35D96DBE2B36542B0012C455",
+        "name" : "TMDBSnapshotsTests"
       }
     }
   ],

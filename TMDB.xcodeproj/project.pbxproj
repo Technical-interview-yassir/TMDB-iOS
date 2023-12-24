@@ -11,13 +11,12 @@
 		350D77EF2B30EA3B00B77C31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D77EE2B30EA3B00B77C31 /* ContentView.swift */; };
 		350D77F32B30EA3D00B77C31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 350D77F22B30EA3D00B77C31 /* Assets.xcassets */; };
 		350D77F62B30EA3D00B77C31 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 350D77F52B30EA3D00B77C31 /* Preview Assets.xcassets */; };
-		350D780A2B30EA3D00B77C31 /* TMDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D78092B30EA3D00B77C31 /* TMDBUITests.swift */; };
-		350D780C2B30EA3D00B77C31 /* TMDBUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D780B2B30EA3D00B77C31 /* TMDBUITestsLaunchTests.swift */; };
 		35385E662B333EBC006B54BA /* MovieProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35385E652B333EBC006B54BA /* MovieProvider.swift */; };
 		35385E6A2B3364EC006B54BA /* DateFormatter+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35385E692B3364EC006B54BA /* DateFormatter+extensions.swift */; };
 		35385E6C2B336513006B54BA /* DiscoverResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35385E6B2B336513006B54BA /* DiscoverResult.swift */; };
 		35385E6E2B336748006B54BA /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35385E6D2B336748006B54BA /* Secrets.plist */; };
 		35385E702B3367CA006B54BA /* SecretManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35385E6F2B3367CA006B54BA /* SecretManager.swift */; };
+		358E73142B370182006F2EF7 /* PreviewMovieStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358E73132B370182006F2EF7 /* PreviewMovieStore.swift */; };
 		35C7D6E92B33816B009AD073 /* SecretManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7D6E82B33816B009AD073 /* SecretManagerTests.swift */; };
 		35C7D6EB2B33863E009AD073 /* SecretTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35C7D6EA2B33863E009AD073 /* SecretTests.plist */; };
 		35C7D6ED2B339223009AD073 /* SecretTestsEmpty.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35C7D6EC2B339223009AD073 /* SecretTestsEmpty.plist */; };
@@ -36,6 +35,9 @@
 		35C7D7122B35026C009AD073 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 35C7D7112B35026C009AD073 /* OrderedCollections */; };
 		35C7D7142B359737009AD073 /* Movie+stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7D7132B359737009AD073 /* Movie+stubs.swift */; };
 		35C7D7162B362527009AD073 /* ImageQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7D7152B362527009AD073 /* ImageQuality.swift */; };
+		35D96DC82B3654360012C455 /* SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7D71A2B362C8B009AD073 /* SnapshotTests.swift */; };
+		35D96DCB2B3654990012C455 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 35D96DCA2B3654990012C455 /* SnapshotTesting */; };
+		35D96DD12B36FB3D0012C455 /* __Snapshots__ in Resources */ = {isa = PBXBuildFile; fileRef = 35D96DD02B36FB3D0012C455 /* __Snapshots__ */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +48,7 @@
 			remoteGlobalIDString = 350D77E82B30EA3A00B77C31;
 			remoteInfo = TMDB;
 		};
-		350D78062B30EA3D00B77C31 /* PBXContainerItemProxy */ = {
+		35D96DC32B36542B0012C455 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 350D77E12B30EA3A00B77C31 /* Project object */;
 			proxyType = 1;
@@ -62,14 +64,12 @@
 		350D77F22B30EA3D00B77C31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		350D77F52B30EA3D00B77C31 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		350D77FB2B30EA3D00B77C31 /* TMDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		350D78052B30EA3D00B77C31 /* TMDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMDBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		350D78092B30EA3D00B77C31 /* TMDBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBUITests.swift; sourceTree = "<group>"; };
-		350D780B2B30EA3D00B77C31 /* TMDBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		35385E652B333EBC006B54BA /* MovieProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieProvider.swift; sourceTree = "<group>"; };
 		35385E692B3364EC006B54BA /* DateFormatter+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+extensions.swift"; sourceTree = "<group>"; };
 		35385E6B2B336513006B54BA /* DiscoverResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverResult.swift; sourceTree = "<group>"; };
 		35385E6D2B336748006B54BA /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		35385E6F2B3367CA006B54BA /* SecretManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretManager.swift; sourceTree = "<group>"; };
+		358E73132B370182006F2EF7 /* PreviewMovieStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMovieStore.swift; sourceTree = "<group>"; };
 		359953A82B31091F00EE5AD9 /* TMDB.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TMDB.xctestplan; sourceTree = "<group>"; };
 		35C7D6E82B33816B009AD073 /* SecretManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretManagerTests.swift; sourceTree = "<group>"; };
 		35C7D6EA2B33863E009AD073 /* SecretTests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SecretTests.plist; sourceTree = "<group>"; };
@@ -88,6 +88,9 @@
 		35C7D70E2B34FD71009AD073 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 		35C7D7132B359737009AD073 /* Movie+stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+stubs.swift"; sourceTree = "<group>"; };
 		35C7D7152B362527009AD073 /* ImageQuality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageQuality.swift; sourceTree = "<group>"; };
+		35C7D71A2B362C8B009AD073 /* SnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTests.swift; sourceTree = "<group>"; };
+		35D96DBF2B36542B0012C455 /* TMDBSnapshotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMDBSnapshotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		35D96DD02B36FB3D0012C455 /* __Snapshots__ */ = {isa = PBXFileReference; lastKnownFileType = folder; path = __Snapshots__; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +109,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		350D78022B30EA3D00B77C31 /* Frameworks */ = {
+		35D96DBC2B36542B0012C455 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35D96DCB2B3654990012C455 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,8 +126,9 @@
 				359953A92B31094700EE5AD9 /* TestPlans */,
 				350D77EB2B30EA3B00B77C31 /* TMDB */,
 				350D77FE2B30EA3D00B77C31 /* TMDBTests */,
-				350D78082B30EA3D00B77C31 /* TMDBUITests */,
+				35D96DC02B36542B0012C455 /* TMDBSnapshotsTests */,
 				350D77EA2B30EA3B00B77C31 /* Products */,
+				35D96DC92B3654990012C455 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,7 +137,7 @@
 			children = (
 				350D77E92B30EA3B00B77C31 /* TMDB.app */,
 				350D77FB2B30EA3D00B77C31 /* TMDBTests.xctest */,
-				350D78052B30EA3D00B77C31 /* TMDBUITests.xctest */,
+				35D96DBF2B36542B0012C455 /* TMDBSnapshotsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,14 +145,12 @@
 		350D77EB2B30EA3B00B77C31 /* TMDB */ = {
 			isa = PBXGroup;
 			children = (
+				35C7D71C2B362D13009AD073 /* Views */,
 				35C7D6F22B3444FB009AD073 /* Stores */,
 				35385E642B333D4C006B54BA /* Networking */,
 				350D77EC2B30EA3B00B77C31 /* TMDBApp.swift */,
-				350D77EE2B30EA3B00B77C31 /* ContentView.swift */,
-				35C7D6F92B34755C009AD073 /* MovieCard.swift */,
 				350D77F22B30EA3D00B77C31 /* Assets.xcassets */,
 				350D77F42B30EA3D00B77C31 /* Preview Content */,
-				35C7D70C2B34EEA1009AD073 /* MovieDetailsView.swift */,
 			);
 			path = TMDB;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				350D77F52B30EA3D00B77C31 /* Preview Assets.xcassets */,
+				358E73132B370182006F2EF7 /* PreviewMovieStore.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -173,15 +177,6 @@
 				35C7D7052B34D594009AD073 /* MovieStoreTests.swift */,
 			);
 			path = TMDBTests;
-			sourceTree = "<group>";
-		};
-		350D78082B30EA3D00B77C31 /* TMDBUITests */ = {
-			isa = PBXGroup;
-			children = (
-				350D78092B30EA3D00B77C31 /* TMDBUITests.swift */,
-				350D780B2B30EA3D00B77C31 /* TMDBUITestsLaunchTests.swift */,
-			);
-			path = TMDBUITests;
 			sourceTree = "<group>";
 		};
 		35385E642B333D4C006B54BA /* Networking */ = {
@@ -242,6 +237,32 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		35C7D71C2B362D13009AD073 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				35C7D70C2B34EEA1009AD073 /* MovieDetailsView.swift */,
+				35C7D6F92B34755C009AD073 /* MovieCard.swift */,
+				350D77EE2B30EA3B00B77C31 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		35D96DC02B36542B0012C455 /* TMDBSnapshotsTests */ = {
+			isa = PBXGroup;
+			children = (
+				35D96DD02B36FB3D0012C455 /* __Snapshots__ */,
+				35C7D71A2B362C8B009AD073 /* SnapshotTests.swift */,
+			);
+			path = TMDBSnapshotsTests;
+			sourceTree = "<group>";
+		};
+		35D96DC92B3654990012C455 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -283,23 +304,26 @@
 			productReference = 350D77FB2B30EA3D00B77C31 /* TMDBTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		350D78042B30EA3D00B77C31 /* TMDBUITests */ = {
+		35D96DBE2B36542B0012C455 /* TMDBSnapshotsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 350D78152B30EA3D00B77C31 /* Build configuration list for PBXNativeTarget "TMDBUITests" */;
+			buildConfigurationList = 35D96DC72B36542B0012C455 /* Build configuration list for PBXNativeTarget "TMDBSnapshotsTests" */;
 			buildPhases = (
-				350D78012B30EA3D00B77C31 /* Sources */,
-				350D78022B30EA3D00B77C31 /* Frameworks */,
-				350D78032B30EA3D00B77C31 /* Resources */,
+				35D96DBB2B36542B0012C455 /* Sources */,
+				35D96DBC2B36542B0012C455 /* Frameworks */,
+				35D96DBD2B36542B0012C455 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				350D78072B30EA3D00B77C31 /* PBXTargetDependency */,
+				35D96DC42B36542B0012C455 /* PBXTargetDependency */,
 			);
-			name = TMDBUITests;
-			productName = TMDBUITests;
-			productReference = 350D78052B30EA3D00B77C31 /* TMDBUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			name = TMDBSnapshotsTests;
+			packageProductDependencies = (
+				35D96DCA2B3654990012C455 /* SnapshotTesting */,
+			);
+			productName = TMDBSnapshotsTests;
+			productReference = 35D96DBF2B36542B0012C455 /* TMDBSnapshotsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -318,7 +342,7 @@
 						CreatedOnToolsVersion = 15.1;
 						TestTargetID = 350D77E82B30EA3A00B77C31;
 					};
-					350D78042B30EA3D00B77C31 = {
+					35D96DBE2B36542B0012C455 = {
 						CreatedOnToolsVersion = 15.1;
 						TestTargetID = 350D77E82B30EA3A00B77C31;
 					};
@@ -335,6 +359,7 @@
 			mainGroup = 350D77E02B30EA3A00B77C31;
 			packageReferences = (
 				35C7D7102B35026B009AD073 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				35C7D7172B362C40009AD073 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 350D77EA2B30EA3B00B77C31 /* Products */;
 			projectDirPath = "";
@@ -342,7 +367,7 @@
 			targets = (
 				350D77E82B30EA3A00B77C31 /* TMDB */,
 				350D77FA2B30EA3D00B77C31 /* TMDBTests */,
-				350D78042B30EA3D00B77C31 /* TMDBUITests */,
+				35D96DBE2B36542B0012C455 /* TMDBSnapshotsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -369,10 +394,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		350D78032B30EA3D00B77C31 /* Resources */ = {
+		35D96DBD2B36542B0012C455 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35D96DD12B36FB3D0012C455 /* __Snapshots__ in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +412,7 @@
 				35C7D70F2B34FD71009AD073 /* MovieDetails.swift in Sources */,
 				350D77EF2B30EA3B00B77C31 /* ContentView.swift in Sources */,
 				35385E662B333EBC006B54BA /* MovieProvider.swift in Sources */,
+				358E73142B370182006F2EF7 /* PreviewMovieStore.swift in Sources */,
 				350D77ED2B30EA3B00B77C31 /* TMDBApp.swift in Sources */,
 				35C7D6FD2B349984009AD073 /* Configuration.swift in Sources */,
 				35C7D7162B362527009AD073 /* ImageQuality.swift in Sources */,
@@ -412,12 +439,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		350D78012B30EA3D00B77C31 /* Sources */ = {
+		35D96DBB2B36542B0012C455 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				350D780A2B30EA3D00B77C31 /* TMDBUITests.swift in Sources */,
-				350D780C2B30EA3D00B77C31 /* TMDBUITestsLaunchTests.swift in Sources */,
+				35D96DC82B3654360012C455 /* SnapshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,10 +455,10 @@
 			target = 350D77E82B30EA3A00B77C31 /* TMDB */;
 			targetProxy = 350D77FC2B30EA3D00B77C31 /* PBXContainerItemProxy */;
 		};
-		350D78072B30EA3D00B77C31 /* PBXTargetDependency */ = {
+		35D96DC42B36542B0012C455 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 350D77E82B30EA3A00B77C31 /* TMDB */;
-			targetProxy = 350D78062B30EA3D00B77C31 /* PBXContainerItemProxy */;
+			targetProxy = 35D96DC32B36542B0012C455 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -652,37 +678,39 @@
 			};
 			name = Release;
 		};
-		350D78162B30EA3D00B77C31 /* Debug */ = {
+		35D96DC52B36542B0012C455 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mb.TMDBUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = mb.TMDBSnapshotsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TMDB;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TMDB.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TMDB";
 			};
 			name = Debug;
 		};
-		350D78172B30EA3D00B77C31 /* Release */ = {
+		35D96DC62B36542B0012C455 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mb.TMDBUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = mb.TMDBSnapshotsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TMDB;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TMDB.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TMDB";
 			};
 			name = Release;
 		};
@@ -716,11 +744,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		350D78152B30EA3D00B77C31 /* Build configuration list for PBXNativeTarget "TMDBUITests" */ = {
+		35D96DC72B36542B0012C455 /* Build configuration list for PBXNativeTarget "TMDBSnapshotsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				350D78162B30EA3D00B77C31 /* Debug */,
-				350D78172B30EA3D00B77C31 /* Release */,
+				35D96DC52B36542B0012C455 /* Debug */,
+				35D96DC62B36542B0012C455 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -736,6 +764,14 @@
 				minimumVersion = 1.0.6;
 			};
 		};
+		35C7D7172B362C40009AD073 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.15.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -743,6 +779,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 35C7D7102B35026B009AD073 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = OrderedCollections;
+		};
+		35D96DCA2B3654990012C455 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 35C7D7172B362C40009AD073 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

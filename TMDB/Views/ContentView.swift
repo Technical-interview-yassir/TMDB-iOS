@@ -59,21 +59,3 @@ struct ContentView: View {
 }
 
 #Preview { ContentView(movieStore: PreviewMovieStore()) }
-
-class PreviewMovieStore: MovieStore {
-    // override var movies: [Movie] = []
-    override func load() async {}
-    init() {
-        super.init(movieProvider: PreviewMovieProvider())
-    }
-}
-
-struct PreviewMovieProvider: MovieProvider {
-    func movieDetails(id: Int) async throws -> MovieDetails {
-        MovieDetails(id: 45, revenue: 50, budget: 30)
-    }
-
-    func trendingMovies(page: Int) async throws -> [DiscoverMovie] { [] }
-    func poster(path: String, imageQuality: ImageQuality) async throws -> Data { Data() }
-    func setup() async throws {}
-}

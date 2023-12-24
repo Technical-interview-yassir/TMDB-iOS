@@ -18,10 +18,12 @@ struct MovieCard: View {
                 .frame(width: 150)
             VStack {
                 Text(movie.title)
-                Text(movie.releaseDate.formatted(
-                    date: .abbreviated,
-                    time: .omitted
-                ))
+                Text(
+                    movie.releaseDate.formatted(
+                        date: .abbreviated,
+                        time: .omitted
+                    )
+                )
             }
         }
     }
